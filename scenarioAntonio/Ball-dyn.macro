@@ -1,11 +1,14 @@
 p3d_beg_desc P3D_ROBOT
 
 p3d_beg_desc_jnt P3D_FREEFLYER  #J1
-  p3d_set_prev_jnt   0
-  p3d_set_pos_xyz 0.0 0.0 0.0 0.0 0.0 0.0
-  p3d_set_dof      0 0 0  0   0   0
-  p3d_set_dof_vmin -12 -12 0 -0 -0 -180
-  p3d_set_dof_vmax 12 12 3 0 0 180
+ p3d_set_prev_jnt		0
+  p3d_set_pos_xyz                   0.0  0.0  0.0  0.0  0.0  0.0
+  p3d_set_dof                       0.0  0.0  0.0  0.0  0.0  0.0
+  p3d_set_dof_vmin                  -10.0  -10.0  0.25 -180.0  -180.0  -180.0
+  p3d_set_dof_vmax                  10.0  10.0  5 180.0  180.0  180.0
+  p3d_set_dof_jerk_max              4.8  4.8  4.8  3.0  3.0  3.0
+  p3d_set_dof_acceleration_max      1.8  1.8  1.8  2.0  2.0  2.0
+  p3d_set_dof_velocity_max          1.5  1.5  1.5  1.0  1.0  1.0
 p3d_end_desc
 
 p3d_beg_desc P3D_BODY ball

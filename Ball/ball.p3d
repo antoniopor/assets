@@ -7,11 +7,9 @@ p3d_beg_desc P3D_ENV ball
 #  p3d_set_obst_color icub-sol Grey
 
 p3d_read_macro AchileMKinect.macro HERAKLES_HUMAN1
-p3d_set_robot_current 0 0 0 0 0 0 3. 2. 1. 0 0 0 0 0 0 0 0 0 80.64 0 0 0 0 0 0 0 0 -88.776 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 
+p3d_read_macro Ball.macro BALL_ROBOT
 
-#p3d_read_macro Ball.macro BALL_ROBOT
-p3d_read_macro Ball-dyn.macro BALL_ROBOT
 p3d_end_desc
 
 p3d_set_env_box -3 3 -3 3 0 3
@@ -19,9 +17,3 @@ p3d_set_ff_limits_in_env_box
 
 p3d_set_active_robot BALL_ROBOT
 
-
-
-
-
-p3d_set_robot_current 0 0 0  0 0 0  -3 0 0.5  0 0 0
-p3d_set_robot_goto    0 0 0  0 0 0  3 0 0.5  0 0 0
