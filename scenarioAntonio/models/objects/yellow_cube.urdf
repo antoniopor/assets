@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+
+<link name="yellow_cube">
+    <visual>
+      <geometry>
+        <mesh filename="package://laas_models/models/objects/yellow_cube.3ds"/>
+      </geometry>
+      <material name="yellow">
+        <color rgba=".2 .2 0 1"/>
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://laas_models/models/objects/yellow_cube.3ds"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="0.075"/>
+      <inertia ixx="0.00378125" ixy="0.0" ixz="0.0" iyy="0.00378125" iyz="0.0" izz="0.00378125"/>
+    </inertial>
+</link>

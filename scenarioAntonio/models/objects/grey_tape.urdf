@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+
+<link name="green_cube">
+    <visual>
+      <geometry>
+        <mesh filename="package://laas_models/models/objects/grey_tape.3ds"/>
+      </geometry>
+      <material name="green">
+        <color rgba="0 .8 0 1"/>
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://laas_models/models/objects/grey_tape.3ds"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="0.075"/>
+      <inertia ixx="0.00378125" ixy="0.0" ixz="0.0" iyy="0.00378125" iyz="0.0" izz="0.00378125"/>
+    </inertial>
+</link>

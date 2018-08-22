@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+
+<robot name="torsby_table">
+    <link name="torsby_table">
+        <visual>
+          <geometry>
+            <box size="1.35 0.85 0.75"/>
+           </geometry>
+           <origin rpy="0 0 0" xyz="0 0 0.375"/>
+          <material name="black">
+            <color rgba=".8 .8 .8 1"/>
+          </material>
+        </visual>
+        <collision>
+          <geometry>
+            <box size="1.35 0.85 0.75"/>
+           </geometry>
+           <origin rpy="0 0 0" xyz="0 0 0.375"/>
+           <contact_coefficients mu="1000.0" kp="0.0" kd="0.0"/>
+        </collision>
+        <inertial>
+          <mass value="25"/>
+          <inertia ixx="0.01" ixy="0.0" ixz="0.0" iyy="0.01" iyz="0.0" izz="0.01"/>
+        </inertial>
+    </link>
+</robot>

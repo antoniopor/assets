@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+
+<robot name="black_cube">
+    <link name="black_cube">
+        <visual>
+          <geometry>
+            <box size="0.055 0.055 0.055"/>
+          </geometry>
+          <material name="black">
+            <color rgba=".8 .8 .8 1"/>
+          </material>
+        </visual>
+        <collision>
+          <geometry>
+            <box size="0.055 0.055 0.055"/>
+          </geometry>
+          <contact_coefficients mu="10000.0" kp="0.00" kd="0.0"/>
+        </collision>
+        <inertial>
+          <mass value="0.075"/>
+          <inertia ixx="0.00378125" ixy="0.0" ixz="0.0" iyy="0.00378125" iyz="0.0" izz="0.00378125"/>
+        </inertial>
+    </link>
+</robot>

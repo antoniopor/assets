@@ -1,0 +1,52 @@
+p3d_beg_desc P3D_ROBOT
+
+p3d_beg_desc_jnt P3D_FREEFLYER  #J1
+ p3d_set_prev_jnt		0
+  p3d_set_pos_xyz                   0.0  0.0  0.0  0.0  0.0  0.0
+  p3d_set_dof                       0.0  0.0  0.0  0.0  0.0  0.0
+  p3d_set_dof_vmin                  -10.0  -10.0  0.25 -180.0  -180.0  -180.0
+  p3d_set_dof_vmax                  10.0  10.0  5 180.0  180.0  180.0
+  p3d_set_dof_jerk_max              4.8  4.8  4.8  3.0  3.0  3.0
+  p3d_set_dof_acceleration_max      3  3  3  3.0  3.0  3.0
+  p3d_set_dof_velocity_max          5  5  5  1.0  1.0  1.0
+p3d_end_desc
+
+p3d_beg_desc P3D_BODY ball
+    p3d_add_desc_sphere ball1 0.25
+p3d_end_desc
+
+
+#eyes
+p3d_beg_desc P3D_BODY eye1
+    p3d_add_desc_sphere eye1e 0.05 P3D_GRAPHIC
+    p3d_set_prim_pos eye1e 0.22 0.07 0.07 0 0 0
+p3d_end_desc
+p3d_beg_desc P3D_BODY eye2
+    p3d_add_desc_sphere eye2e 0.05 P3D_GRAPHIC
+    p3d_set_prim_pos eye2e 0.22 -0.07 0.07 0 0 0
+p3d_end_desc
+
+
+# Virtual joints
+p3d_beg_desc_jnt P3D_FIXED #2
+   p3d_set_name Eyes
+   p3d_set_pos_relative
+   p3d_set_prev_jnt 1
+   p3d_set_pos_mat 1 0 0 0.25  0 0 1 0.0  0 -1 0 0.07  0 0 0 1  
+   p3d_set_dof_vmin -10 -10 0 -180 -180 -180
+   p3d_set_dof_vmax  10  10 2  180  180  180
+p3d_end_desc
+
+#P3d_beg_desc_jnt P3D_TRANSLATE #3
+#    p3d_set_name HriLookJoint
+#    p3d_set_prev_jnt 2
+#    p3d_set_pos_axe  0.25 0 0.07 1 0 0
+#    p3d_set_dof_vmin 0
+#    p3d_set_dof_vmax 10
+#P3d_end_desc
+
+p3d_end_desc
+
+p3d_set_body_poly_color eye1 1 Any 0.3 0.3 0.7
+p3d_set_body_poly_color eye2 1 Any 0.3 0.3 0.7
+p3d_set_body_poly_color ball 1 Any 0.3 0.7 0.2

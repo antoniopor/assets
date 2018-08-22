@@ -1,0 +1,46 @@
+# begin the description of an environment called ADREAM
+p3d_beg_desc P3D_ENV ADREAM
+
+# loads the file describing the environmental objects (building, obstacles, landmarks)
+#  searches for the file in the BLEND directory next to this file
+p3d_read_blend adream.blend 1.
+
+# set the environment limits. planning is usually done within these bounds
+# format is p3d_set_env_box xmin xmax ymin ymax zmin zmax
+# that is the whole building (almost)
+#p3d_set_env_box -20 20.5 -20 23.5 0 3
+# this one is the main room and little bit more
+###p3d_set_env_box -2 15. -5 20.5 0 3
+# the lounge appartment area
+#p3d_set_env_box 2.7 7.0 5.5 9.0 -0.1 3
+# the main room entry zone
+#p3d_set_env_box 0.75 7.4 14.05 17.45 0 3
+
+# ************* INTERNAL OBJECTS ***************
+# the cylinders are used to compute collision for navigation purposes. You can change the model, not the name.
+# the origin of the mesh (CAD files) or the base joint (urdf, macro) must lay at the center of the base disc
+#p3d_read_macro ./Objects/Movable/PepperCylinder.macro PEPPERCYLINDER
+#p3d_read_macro ./Objects/Movable/HumanCylinder.macro HUMCYLINDER
+
+# ************* HUMANS ***************
+
+#p3d_read_collada rayman/face_base.urdf FACE_HUMAN1
+#p3d_set_robot_current 0. 0. 0. 0. 0. 0. 4. 16. 0. 0. 0. 0. 0. 0. 1.7 -90. 90. 0.
+
+
+# ************* ROBOTS ***************
+
+#p3d_read_collada pepper/pepper.urdf PEPPER_ROBOT 1
+#p3d_set_robot_current 0. 0. 0. 0. 0. 0. 5. 16. 0. 0. 0. 0. 0. 0. 0. 0. 0. 86.467 1. 0. -1. -90.752 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 15. 0. #0. 85.725 -1. 0. 1. 86.8 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 15. 0. 0. 0. 0. 0.000000
+#p3d_set_robot_goto 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. #0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.000000
+
+# some magic to disable some self colisions for the pepper robot (disable check for consecutive body parts)
+#p3d_add_desc_rob_col_init PEPPER_ROBOT
+#p3d_desactivate_col_check automatic2
+
+# that's the name of the robot we are planning for
+#p3d_set_active_robot PEPPER_ROBOT
+
+# enforce the respect of the bounds specified by p3d_set_env_box
+p3d_set_base_limits_in_env_box
+

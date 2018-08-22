@@ -1,0 +1,28 @@
+<?xml version="1.0" ?>
+<robot name="rayman_head_torso" xmlns:xacro="http://www.ros.org/wiki/xacro">
+  <material name="skin">
+    <color rgba="0.5 0.5 0.5 1."/>
+  </material>
+  <link name="base_link"/>
+  <link name="face">
+    <visual>
+      <material name="skin"/>
+      <origin xyz="0.0 0 0."/>
+      <geometry>
+        <mesh filename="rayman_meshes/face.stl" scale="1 1 1"/>
+      </geometry>
+    </visual>
+  </link>
+  <joint name="base_face" type="floating">
+    <parent link="base_link"/>
+    <child link="face"/>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+  </joint>
+  <link name="Perspective_frame"/>
+  <joint name="Perspective_fixedjoint" type="fixed">
+    <parent link="face"/>
+    <child link="Perspective_frame"/>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+  </joint>
+</robot>
+
